@@ -1,30 +1,42 @@
 //your JS code here. If required.
-let inputs = document.querySelectorAll("input");
-let ind = 0;
-for ( let i = 0; i < inputs.length; i++ ){
-    inputs[i].addEventListener("keyup", onKeyup);
-}
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the code container
+    var codeContainer = document.getElementById('codeContainer');
 
-inputs[ind].focus();
+    // Create six input fields dynamically
+    for (var i = 0; i < 6; i++) {
+      var input = document.createElement('input');
+      input.type = 'text';
+      input.maxLength = 1;
+      input.classList.add('code');
+      input.addEventListener('input', handleInput);
+      input.addEventListener('keydown', handleKeyDown);
 
-function onKeyup(event){
-    if(event.key === "Backspace"){
-        if(ind == 0){
-            return;
-        }
-        else{
-            ind--;
-            inputs[ind].focus();
-        }
+      // Append the input field to the code container
+      codeContainer.appendChild(input);
     }
-    else{
-        if(ind < 5){
-        ind++;
-        inputs[ind].focus();
+
+    // Function to handle input events
+    function handleInput(event) {
+      var input = event.target;
+
+      // Move to the next input field on input
+      if (input.value.length === 1) {
+        var nextInput = input.nextElementSibling;
+        if (nextInput) {
+          nextInput.focus();
         }
-        else{
-            inputs[ind].blur();
-        }
+      }
     }
-    
-}
+
+    // Function to handle backspace key press
+    function handleKeyDown(event) {
+      var input = event.target;
+      var prevInput = input.previousElementSibling;
+
+      // Move to the previous input field on backspace press
+      if (event.key === 'Backspace' && input.value.length === 0 && prevInput) {
+        prevInput.focus();
+      }
+    }
+  });
