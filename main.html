@@ -7,18 +7,18 @@
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-	<h3 id="verification_heading">Verify Your Account</h3>
-	<p id="verification_subtext">We emailed you the six digit code to acciojob@email.com Enter the code below to confirm your email address.</p>
-	<div class="code-container">
-		
-			<input type="text" class="code" id="code-1">
-			<input type="text" class="code" id="code-2">
-			<input type="text" class="code" id="code-3">
-			<input type="text" class="code" id="code-4">
-			<input type="text" class="code" id="code-5">
-			<input type="text" class="code" id="code-6">
-		
+	<h1 id="verification_heading">Verify Your Account</h1>
+    <p id="verification_subtext">We emailed you the six digit code to acciojob@gmail.com Enter the code below to confirm your email address.</p>
+    <div class="code-container">
+        <input type="text" class="code" maxlength="1" id="digit1" oninput="moveToNext(this, 'digit2')" focused>
+        <input type="text" class="code" maxlength="1" id="digit2" oninput="moveToNext(this, 'digit3')" focused>
+        <input type="text" class="code" maxlength="1" id="digit3" oninput="moveToNext(this, 'digit4')" focused>
+        <input type="text" class="code" maxlength="1" id="digit4" oninput="moveToNext(this, 'digit5')" focused>
+        <input type="text" class="code" maxlength="1" id="digit5" oninput="moveToNext(this, 'digit6')" focused>
+        <input type="text" class="code" maxlength="1" id="digit5" focused>
+    </div>
+	<div class="fake">
+		This is desgin only. We didn’t  actually  send you an email as we <br> don’t have your email, right?
 	</div>
     <script type="text/javascript" src="./script.js">
 </script>

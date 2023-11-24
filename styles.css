@@ -1,9 +1,38 @@
-/*  your css code here. If applicable */
-.code-container{
-	display: flex;
-	gap: 20px;
-}
-.code  {
-	width: 50px;
-	height: 50px;
+ body {
+     font-family: Arial, sans-serif;
+     text-align: center;
+	 border:2px solid black;
+	 border-radius:10px;
+	 padding:20px
+        }
+
+        #verification_heading {
+      font-size: 24px;
+      margin-top: 20px;
+        }
+
+        #verification_subtext {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .code-container {
+            display: flex;
+            justify-content: center;
+            margin: 40px auto;
+        }
+
+        .code {
+            width: 30px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+            margin: 0 10px;
+            border: 4px solid #666;
+            border-radius: 50%;
+        }
+.fake{
+	text-align:center;
+	background-color:#f2f2f2;
+	padding:5px;
 }
